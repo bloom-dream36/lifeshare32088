@@ -22,6 +22,63 @@
 
 | columun              | Typpe      | Options           |
 |----------------------|------------|-------------------| 
+|start_time             |detetime    | null:false        |
+|end_day               |datetime    | null:false        |
+|title                 | string     | null:false        |
+|content               | text       | null:false
+|map                   | string     |                   |
+|url                   | string     |         |
+|user                  | references | foreign_key       |
+
+
+
+### Association
+
+- belongs_to user
+- has_many   keys
+- has_many   comments
+
+
+## comments
+
+| columun              | Type       | Options           |   
+|----------------------|------------|-------------------|
+|message               | text       | null:false        |
+|calendare             | references |  foreign_key      |
+|usre                  | references |  foreign_key      |
+
+### Association
+
+- belongs_to calendar
+- belongs_to user
+
+
+## Keys
+
+
+## Users
+
+| columun              | Type      | Options           |   
+|----------------------|-----------|-------------------|
+|nickname              | string    | null:false        |
+|email                 | string    | unique null:false |
+|a_word                | string    |                   |
+|password              | string    | null:false        |
+|encrypted_password    | string    | null:false        |
+|birthday              | date      | null:false        |
+
+
+### Association
+
+- has_many plans
+- has_many comments
+- has_many keys
+- has_many  relationship
+
+## Calendars
+
+| columun              | Typpe      | Options           |
+|----------------------|------------|-------------------| 
 |start_day             |detetime    | null:false        |
 |end_day               |datetime    | null:false        |
 |title                 | string     | null:false        |
@@ -63,16 +120,15 @@
 ### Association
 
 - belongs_to user
--belongs_to calensare
+- belongs_to calendar
 
+## relationship
 
+| columun            | Type       | Options              |
+|--------------------|------------|----------------------|
+|follower_id         | integer    |                      |
+|following_id        | references | foreign_key          |
 
+### Association
 
-
-
-
-
-
-
-
-
+- belongs_to user
