@@ -1,0 +1,27 @@
+<%# CSS・・・assets/stylesheets/shared/header.css %>
+<header class='top-page-header'>
+  <button type="button" class="drawer-toggle drawer-hamburger">
+        <span class="sr-only">toggle navigation</span>
+        <span class="drawer-hamburger-icon"></span>
+  </button>
+  <nav class="drawer-nav" role="navigation">
+      <ul class="drawer-menu drawer-menu--right">
+		<li><%= link_to 'Nav1', '#', class: 'drawer-menu-item'%></li>
+        <li><%= link_to 'Nav2', '#', class: 'drawer-menu-item'%></li>
+      </ul>
+    </nav>
+  <div class='nav'>
+    <h1>LIFE SHARE </h1>
+    </ul>
+    <ul class='lists-right'>
+
+      <% if user_signed_in? %>
+      <li><%= link_to current_user.nickname, "#", class: "user-nickname" %></li>
+       <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li> 
+       <% else %>
+      <li><%= link_to 'ログイン', new_user_session_path, class: "login" %></li>
+      <li><%= link_to '新規登録', new_user_registration_path, class: "sign-up" %></li>
+      <% end %>
+    </ul> 
+  </div>
+</header>

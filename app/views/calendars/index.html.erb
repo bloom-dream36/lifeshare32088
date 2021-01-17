@@ -1,6 +1,5 @@
+<%= render "shared/header" %>
 <p id="notice"><%= notice %></p>
-
-<h1>自分の日記</h1>
 
 <table>
   <thead>
@@ -26,7 +25,7 @@
 
 <br>
 
-<%= link_to '日記をかく', new_calendar_path %>
+<%= link_to '予定入力', new_calendar_path %>
 
 <%= month_calendar events: @calendars do |date, blogs| %>
   <%= date.day %>
