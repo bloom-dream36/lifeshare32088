@@ -20,6 +20,9 @@
   padding: 1vh 0;
 }
 
+h1{
+  font-size: 40px;
+}
 
 .lists-right {
   display: flex;
