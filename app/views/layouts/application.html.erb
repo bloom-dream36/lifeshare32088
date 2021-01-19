@@ -3,11 +3,19 @@
   <head>
     <title>Lifeshare32088</title>
     <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+   
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+    <%= javascript_pack_tag 'application' %>
+
+    <!-- drawer.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/drawer/3.2.2/css/drawer.min.css">
+    <!-- jquery & iScroll -->  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/iScroll/5.2.0/iscroll.min.js"></script>
+    <!-- drawer.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/drawer/3.2.2/js/drawer.min.js"></script>
+    
+ </head>
 
   <body>
     <%= yield %>
